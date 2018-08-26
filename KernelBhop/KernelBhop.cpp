@@ -2,9 +2,6 @@
 
 #include "KeInterface.h"
 
-
-
-
 int main()
 {
 	KeInterface Driver("\\\\.\\kernelhop");
