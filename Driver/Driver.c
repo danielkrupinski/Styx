@@ -164,8 +164,8 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject,
 
 	PsSetLoadImageNotifyRoutine(ImageLoadCallback);
 
-	RtlInitUnicodeString(&dev, L"\\Device\\kernelhop");
-	RtlInitUnicodeString(&dos, L"\\DosDevices\\kernelhop");
+	RtlInitUnicodeString(&dev, L"\\Device\\styx");
+	RtlInitUnicodeString(&dos, L"\\DosDevices\\styx");
 
 	IoCreateDevice(pDriverObject, 0, &dev, FILE_DEVICE_UNKNOWN, FILE_DEVICE_SECURE_OPEN, FALSE, &pDeviceObject);
 	IoCreateSymbolicLink(&dos, &dev);
