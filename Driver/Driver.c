@@ -1,8 +1,3 @@
-/* Cheat that uses a driver for reading / writing virtual memory,
-instead of using Win32API Functions. Written By Zer0Mem0ry,
-https://www.youtube.com/watch?v=sJdBtPosWQs */
-
-
 #include "ntos.h"
 
 // Request to read virtual user memory (memory of a program) from kernel space
@@ -169,8 +164,8 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject,
 
 	PsSetLoadImageNotifyRoutine(ImageLoadCallback);
 
-	RtlInitUnicodeString(&dev, L"\\Device\\kernelhop");
-	RtlInitUnicodeString(&dos, L"\\DosDevices\\kernelhop");
+	RtlInitUnicodeString(&dev, L"\\Device\\styx");
+	RtlInitUnicodeString(&dos, L"\\DosDevices\\styx");
 
 	IoCreateDevice(pDriverObject, 0, &dev, FILE_DEVICE_UNKNOWN, FILE_DEVICE_SECURE_OPEN, FALSE, &pDeviceObject);
 	IoCreateSymbolicLink(&dos, &dev);

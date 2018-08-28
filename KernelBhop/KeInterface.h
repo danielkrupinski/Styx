@@ -1,3 +1,5 @@
+#pragma once
+
 #include <Windows.h>
 
 /* IOCTL Codes needed for our driver */

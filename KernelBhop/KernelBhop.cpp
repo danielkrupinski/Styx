@@ -2,12 +2,9 @@
 
 #include "KeInterface.h"
 
-
-
-
 int main()
 {
-	KeInterface Driver("\\\\.\\kernelhop");
+	KeInterface Driver("\\\\.\\styx");
 
 	// Get address of client.dll & pid of csgo from our driver
 	DWORD ProcessId = Driver.GetTargetPid();
